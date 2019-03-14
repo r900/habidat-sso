@@ -29,7 +29,7 @@ RUN set -x \
     && mkdir app \
     && mkdir -p /var/www/html/simplesaml/modules/habidat
 
-COPY themes /var/www/html/simplesaml/modules/themes
+COPY themes /var/simplesaml/modules/themes
 COPY templates /app/templates
 COPY params.yml.dist /params.default.yml
 COPY sso.conf /sso.conf

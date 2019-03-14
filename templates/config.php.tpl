@@ -415,7 +415,7 @@ $config = array(
     /*
      * Which theme directory should be used?
      */
-    'theme.use' => 'habidat:habidat',
+    'theme.use' => 'themes:modern',
 
 
     /*
