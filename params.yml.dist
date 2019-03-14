@@ -1,0 +1,86 @@
+---
+secretsalt:     salt
+adminpassword:  password
+
+authsources_ldap:   
+  - name:            ldap
+    host:            habidat-ldap
+    enable_tls:      FALSE
+    dn_pattern:      null
+    search_enable:   TRUE
+    search_base:     ou=users,dc=example,dc=com
+    search_scope:    onelevel
+    search_filter:   (objectClass=Person)
+    search_username: cn=admin,dc=example,dc=com
+    search_password: secret
+    attributes:
+      - uid
+      - cn
+      - mail
+      - memberOf
+
+idp_hosted:  
+  - entityid:        https://sso.example.com 
+    host:            sso.example.com
+    privatekey:      server.pem 
+    certificate:     server.cert
+    authsource:      ldap
+
+sp_remote: 
+  - entityid:                   https://nextcloud.example.com
+    assertionconsumerservice:   https://cloud.habidat.local/apps/user_saml/saml/acs
+    nameidformat:               urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified
+    ssnameidattribute:          uid
+    ssattributes:               true
+    singlelogoutservice:        https://cloud.habidat.local/apps/user_saml/saml/sls
+
+# Config
+baseurlpath:             https://sso.example.com/simplesaml/
+certdir:                 cert/
+loggingdir:              log/
+datadir:                 data/
+tempdir:                 /tmp/simplesaml
+debug:                   true
+showerrors:              true
+errorreporting:          false
+debug_validatexml:       false
+auth_adminpassword:      password
+admin_protectindexpage:  true
+admin_protectmetadata:   true
+technicalcontact_name:   John Doe
+technicalcontact_email:  john.doe@company.com
+timezone:                America/New_York
+loggin_level:            NOTICE
+logging_handler:         syslog
+enable_saml20_idp:       true
+enable_shib13_idp:       false
+enable_adfs_idp:         false
+enable_wsfed_sp:         false
+enable_authmemcookie:    false
+
+# Session
+session_durration:               28800
+session_datastore_timeout:       14400
+session_state_timeout:           3600
+cookie_name:                     SimpleSAMLSessionID
+session_cookie_lifetime:         0
+session_cookie_domain:           null
+session_cookie_secure:           false
+session_disable_fallback:        false
+enable_http_post:                false
+session_phpsession_cookiename:   null
+session_phpsession_savepath:     null
+session_phpsession_httponly:     false
+session_authtoken_cookiename:    SimpleSAMLAuthToken
+session_rememberme_enable:       true
+session_rememberme_checked:      true
+session_rememberme_lifetime:     1209600
+
+# Language
+language_default:                de
+language_parameter_name:         language
+language_parameter_setcookie:    true
+language_cookie_name:            language
+language_cookie_domain:          null
+language_cookie_path:            /
+language_cookie_lifetime:        77760000
