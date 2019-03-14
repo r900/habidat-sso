@@ -55,6 +55,7 @@ $errorparams          = $this->data['errorparams'];
                     <input type="checkbox" value="remember-me" >
                     Eingeloggt bleiben
                 </label>       
+                <span class="pull-left" style="margin-top:10px;"><a style="color:#dddddd;" href="https://user.<?php echo $_ENV['HABIDAT_DOMAIN'] ?>/lostpasswd">Passwort vergessen?</a></span>
                                  <?php foreach ($this->data['stateparams'] as $name => $value) : ?>
           <input type="hidden"
             name="<?php echo htmlspecialchars($name); ?>"
