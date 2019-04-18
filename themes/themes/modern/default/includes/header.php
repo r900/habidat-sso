@@ -58,13 +58,11 @@ endif;
     <title><?php echo $title; ?></title>
     <meta name="description" content="SAML Configuration">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>/style.css" />    
+    <link rel="shortcut icon" type="image/png" href="<?php echo $url_path; ?>/favicon.png" />    
 
     <!--[if IE]>
       <link href="<?php echo $css_path; ?>/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
