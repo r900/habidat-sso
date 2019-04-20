@@ -1,12 +1,12 @@
 # Dockerfile written by Florian Humer <florian.humer@gmail.com>
 #
 
-FROM php:7.2-apache-stretch
+FROM php:7.3-apache-stretch
 
 MAINTAINER Florian Humer <florian.humer@gmail.com>
 
-ENV SSP_VERSION 1.17.1
-ENV SSP_HASH d1a6e415828e8c257f9808a5b70d5f738f95af2633cdbae5cf8629571d33a803
+ENV SSP_VERSION 1.17.2
+ENV SSP_HASH 0e2fd641e8cba2966437fb64591e28a73fb90bae3bc97949c60a47a5b8c1e80e
 ENV GOMPLATE_VERSION 3.3.1
 
 
@@ -30,13 +30,12 @@ RUN set -x \
     && mkdir -p /var/www/html/simplesaml/modules/habidat
 
 COPY themes /var/simplesaml/modules/themes
+COPY public /var/simplesaml/public
 COPY templates /app/templates
 COPY params.yml.dist /params.default.yml
 COPY sso.conf /sso.conf
 
 WORKDIR /var/simplesaml
-
-VOLUME ["/var/simplesaml"]
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

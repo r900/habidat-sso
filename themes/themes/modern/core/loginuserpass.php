@@ -34,7 +34,7 @@ $errorparams          = $this->data['errorparams'];
     <div class="row ">
         <div class="col-sm-8 col-md-6 col-md-offset-4">
             <div class="account-wall">
-                <img class="profile-img" src="<?php echo SimpleSAML\Module::getModuleURL('themes/habidat.png'); ?>" alt="">
+                <img class="profile-img" src="/public/habidat.png" alt="">
                 <h1 class="text-center login-title"><?php echo  $_ENV["HABIDAT_TITLE"] ?></h1>
                 <form class="form-signin" action="?" method="post" name="f">
                 <div class="input-group">

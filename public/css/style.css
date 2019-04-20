@@ -92,3 +92,7 @@
   top: 50%;
   transform: translateY(-75%);
 }
+
+body {
+    background-image: url("/public/background.png");
+}
