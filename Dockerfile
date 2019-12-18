@@ -1,7 +1,7 @@
 # Dockerfile written by Florian Humer <florian.humer@gmail.com>
 #
 
-FROM php:7.4-apache-stretch
+FROM php:7.3-apache-buster
 
 MAINTAINER Florian Humer <florian.humer@gmail.com>
 
