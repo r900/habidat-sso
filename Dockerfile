@@ -1,11 +1,11 @@
 # Dockerfile written by Florian Humer <florian.humer@gmail.com>
 #
 
-FROM php:7.3-apache-buster
+FROM php:7.4-apache-buster
 
 MAINTAINER Florian Humer <florian.humer@gmail.com>
 
-ENV SSP_VERSION 1.17.2
+ENV SSP_VERSION 1.18.3
 ENV SSP_HASH 0e2fd641e8cba2966437fb64591e28a73fb90bae3bc97949c60a47a5b8c1e80e
 ENV GOMPLATE_VERSION 3.3.1
 
