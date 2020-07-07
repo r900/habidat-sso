@@ -25,7 +25,11 @@ $config = array(
 		     * This can be an array of attribute names, or NULL, in which case
 		     * all attributes are fetched.
 		     */
-		    'attributes' => NULL,
+		    'attributes' => array(
+				{{ range $attribute := $authsource.attributes  }}
+				  '{{ $attribute }}',
+                {{ end }}
+            ),		    
 
 		    /*
 		     * The pattern which should be used to create the user's DN given the username.
@@ -61,7 +65,7 @@ $config = array(
 		     * the array may match the value the username.
 		     */
 		    'search.attributes' => array(
-				{{ range $attribute := $authsource.attributes  }}
+				{{ range $attribute := $authsource.search_attributes  }}
 				  '{{ $attribute }}',
                 {{ end }}
             ),

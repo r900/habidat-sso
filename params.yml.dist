@@ -7,17 +7,21 @@ authsources_ldap:
     host:            habidat-ldap
     enable_tls:      FALSE
     dn_pattern:      null
+    attributes:
+      - uid
+      - cn
+      - mail
+      - memberOf
     search_enable:   TRUE
     search_base:     ou=users,dc=example,dc=com
     search_scope:    onelevel
     search_filter:   (objectClass=Person)
     search_username: cn=admin,dc=example,dc=com
     search_password: secret
-    attributes:
+    search_attributes:
       - uid
       - cn
       - mail
-      - memberOf
 
 idp_hosted:  
   - entityid:        https://sso.example.com 
@@ -33,6 +37,7 @@ sp_remote:
     ssnameidattribute:          uid
     ssattributes:               true
     singlelogoutservice:        https://cloud.habidat.local/apps/user_saml/saml/sls
+    restricttoldapgroup:        all / cn=mygroup,ou=groups,dc=example,dc=com
 
 # Config
 baseurlpath:             https://sso.example.com/simplesaml/
