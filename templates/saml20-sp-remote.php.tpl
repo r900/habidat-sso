@@ -22,7 +22,9 @@ $metadata['{{ $spremote.entityid }}'] = array(
            'class' => 'authorize:Authorize',
            'regex' => false,
            'memberOf' => [
-               '{{ $spremote.restricttoldapgroup }}',
+{{ range ($spremote.restricttoldapgroup | strings.Split "|") }}            
+               '{{ . }}',
+{{ end }}               
            ],
            'reject_msg' => [
                'en' => 'This site is only available to members of {{ $spremote.restricttoldapgroup }}.',
